@@ -1,0 +1,207 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "pinkyspringy": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/pinkyspringy",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/images"
+            ],
+            "styles": [
+              "src/styles.css",
+  "src/styles/bootstrap4/bootstrap.min.css" ,
+"src/plugins/font-awesome-4.7.0/css/font-awesome.min.css" ,
+  "src/styles/checkout.css" ,
+  "src/styles/checkout_responsive.css" ,
+
+ 
+	"src/plugins/OwlCarousel2-2.2.1/owl.carousel.css",
+
+"src/plugins/OwlCarousel2-2.2.1/owl.theme.default.css",
+
+	"src/plugins/OwlCarousel2-2.2.1/animate.css",
+
+              "src/plugins/colorbox/colorbox.css",
+
+	            "src/styles/main_styles.css",
+
+	             "src/styles/responsive.css",
+
+               "src/styles/product.css",
+
+
+          "src/styles/product_responsive.css",
+
+
+          "src/styles/cart.css",
+
+             "src/styles/cart_responsive.css",
+
+             "src/styles/contact.css",
+
+           "src/styles/contact_responsive.css",
+
+
+
+         "src/plugins/malihu-custom-scrollbar/jquery.mCustomScrollbar.css",
+	       "src/plugins/jquery-ui-1.12.1.custom/jquery-ui.css",
+	     "src/styles/categories.css",
+       "src/styles/categories_responsive.css"
+
+
+
+            ],
+            "scripts": [
+              "src/js/jquery-3.2.1.min.js",
+"src/styles/bootstrap4/popper.js",
+"src/styles/bootstrap4/bootstrap.min.js",
+"src/plugins/easing/easing.js",
+"src/plugins/parallax-js-master/parallax.min.js",
+"src/js/checkout_custom.js",
+
+
+	
+	"src/plugins/OwlCarousel2-2.2.1/owl.carousel.js",
+	"src/plugins/colorbox/jquery.colorbox-min.js",
+	"src/js/custom.js",
+
+
+  "src/js/product_custom.js",
+
+  "src/js/cart_custom.js",
+
+  "src/js/contact_custom.js",
+
+  "src/plugins/Isotope/isotope.pkgd.min.js",
+	"src/plugins/malihu-custom-scrollbar/jquery.mCustomScrollbar.js",
+	"src/plugins/jquery-ui-1.12.1.custom/jquery-ui.js",
+	"src/js/categories_custom.js"
+
+
+
+
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pinkyspringy:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pinkyspringy:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pinkyspringy:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+          
+              "src/styles.css",
+
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+           
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "pinkyspringy:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pinkyspringy:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "pinkyspringy",
+  "cli": {
+    "analytics": "713843b6-6a19-4b2e-864c-8c6b1c2882ee"
+  }
+}
